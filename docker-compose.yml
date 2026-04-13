@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:17
-    container_name: flashpoint-postgres
+    container_name: checkpoint-postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: passwrd
@@ -16,7 +16,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: flashpoint-redis
+    container_name: checkpoint-redis
     ports:
       - "6379:6379"
     volumes:
@@ -28,10 +28,10 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: asia-east1-docker.pkg.dev/flashesim/flashpoint/server:latest
-    container_name: flashpoint-server
+    image: asia-east1-docker.pkg.dev/flashesim/checkpoint/server:latest
+    container_name: checkpoint-server
     environment:
-      DATABASE_URL: postgresql://user:password@postgres:5432/flashpoint_db?schema=public
+      DATABASE_URL: postgresql://user:password@postgres:5432/checkpoint_db?schema=public
       JWT_SECRET: dev-secret-change-in-production
       PORT: 3000
     ports:
@@ -45,8 +45,8 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: asia-east1-docker.pkg.dev/flashesim/flashpoint/client:latest
-    container_name: flashpoint-client
+    image: asia-east1-docker.pkg.dev/flashesim/checkpoint/client:latest
+    container_name: checkpoint-client
     ports:
       - "80:80"
     depends_on:

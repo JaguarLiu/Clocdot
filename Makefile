@@ -58,7 +58,7 @@ build-server:
 
 # === Push to Artifact Registry ===
 
-REGISTRY := asia-east1-docker.pkg.dev/flashesim/flashpoint
+REGISTRY := repo/project/checkpoint
 
 # Build (linux/amd64) + push client 和 server
 push:
@@ -78,7 +78,7 @@ push-server:
 
 # === Deploy to GCE ===
 
-GCE_INSTANCE := flashpoint
+GCE_INSTANCE := checkpoint
 GCE_ZONE := asia-east1-c
 
 # 上傳 docker-compose.prod.yml 和 Caddyfile.prod 到 GCE

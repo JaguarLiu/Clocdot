@@ -19,8 +19,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'FlashPoint - 遠端工作打卡',
-        short_name: 'FlashPoint',
+        name: 'CheckPoint - 遠端工作打卡',
+        short_name: 'CheckPoint',
         description: '簡單、透明、不侵犯隱私的遠端打卡 App',
         theme_color: '#10b981',
         background_color: '#f3f0e6',

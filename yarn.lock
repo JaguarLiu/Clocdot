@@ -987,7 +987,7 @@
     "@fastify/forwarded" "^3.0.0"
     ipaddr.js "^2.1.0"
 
-"@flashpoint/client@file:/Users/jaguar/FlashPoint/client":
+"@checkpoint/client@file:/Users/jaguar/checkpoint/client":
   version "0.0.0"
   resolved "file:client"
   dependencies:
@@ -997,7 +997,7 @@
     react-router-dom "^7.13.0"
     swr "^2.4.0"
 
-"@flashpoint/server@file:/Users/jaguar/FlashPoint/server":
+"@checkpoint/server@file:/Users/jaguar/checkpoint/server":
   version "0.0.0"
   resolved "file:server"
   dependencies:

@@ -75,7 +75,7 @@ export default function Login() {
         </div>
 
         {/* 標題與副標題 */}
-        <h1 className="text-2xl font-black text-slate-700 mb-2">FlashPoint</h1>
+        <h1 className="text-2xl font-black text-slate-700 mb-2">CheckPoint</h1>
         <p className="text-xs font-bold text-slate-400 mb-10 uppercase tracking-[0.2em]">打卡系統</p>
 
         {/* 錯誤提示 */}

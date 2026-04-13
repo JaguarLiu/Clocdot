@@ -42,7 +42,7 @@ API --> DB
 ## 專案結構 (Monorepo)
 
 ```
-FlashPoint/
+CheckPoint/
 ├── package.json                ← Yarn Workspaces 根設定
 ├── .env.example
 ├── .gitignore
@@ -286,7 +286,7 @@ yarn db:studio      # 開啟 Prisma Studio GUI
 複製 `.env.example` 到 `server/.env`，填入以下設定：
 
 ```env
-DATABASE_URL="postgresql://postgres:postgres@localhost:5432/flashpoint?schema=public"
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/checkpoint?schema=public"
 JWT_SECRET="your-random-secret"
 PORT=3000
 ```

@@ -16,7 +16,7 @@ export default function AppLayout() {
     '/admin/attendance': '出勤查詢',
     '/admin/corrections': '補卡審核',
   }
-  const title = headerTitles[location.pathname] || 'FlashPoint'
+  const title = headerTitles[location.pathname] || 'CheckPoint'
 
   return (
     <div className="min-h-screen bg-[#f3f0e6] flex justify-center items-start font-sans overflow-hidden text-slate-900">
