@@ -5,9 +5,9 @@ services:
     image: postgres:17
     container_name: flashpoint-postgres
     environment:
-      POSTGRES_USER: flashtele
-      POSTGRES_PASSWORD: Flash766966-
-      POSTGRES_DB: flashpoint_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwrd
+      POSTGRES_DB: db
     ports:
       - "5433:5432"
     volumes:
