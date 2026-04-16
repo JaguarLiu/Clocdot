@@ -52,17 +52,6 @@ export function submitCorrectionRequest({ workDate, time, type, reason }) {
   })
 }
 
-export function getAdminAttendanceList(month) {
-  return request(`/admin/attendance?month=${month}`)
-}
-
-export function reviewCorrectionRequest(requestId, status) {
-  return request(`/admin/correction-requests/${requestId}`, {
-    method: 'PATCH',
-    body: JSON.stringify({ status }),
-  })
-}
-
 export function submitLeaveRequest({ leaveType, startDate, startTime, endDate, endTime, reason }) {
   return request('/leave-requests', {
     method: 'POST',

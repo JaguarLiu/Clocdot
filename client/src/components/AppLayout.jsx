@@ -13,8 +13,6 @@ export default function AppLayout() {
     '/history': '歷史紀錄',
     '/correction': '補打卡申請',
     '/profile': '個人中心',
-    '/admin/attendance': '出勤查詢',
-    '/admin/corrections': '補卡審核',
   }
   const title = headerTitles[location.pathname] || 'CheckPoint'
 

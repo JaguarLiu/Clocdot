@@ -56,15 +56,20 @@ build-client:
 build-server:
 	docker compose build server
 
+# 只建置 admin
+build-admin:
+	docker compose build admin
+
 # === Push to Artifact Registry ===
 
 REGISTRY := repo/project/checkpoint
 
-# Build (linux/amd64) + push client 和 server
+# Build (linux/amd64) + push client, server 和 admin
 push:
 	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker compose build
 	docker push $(REGISTRY)/server:latest
 	docker push $(REGISTRY)/client:latest
+	docker push $(REGISTRY)/admin:latest
 
 # 只 push client
 push-client:
@@ -75,6 +80,11 @@ push-client:
 push-server:
 	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker compose build server
 	docker push $(REGISTRY)/server:latest
+
+# 只 push admin
+push-admin:
+	DOCKER_DEFAULT_PLATFORM=linux/amd64 docker compose build admin
+	docker push $(REGISTRY)/admin:latest
 
 # === Deploy to GCE ===
 

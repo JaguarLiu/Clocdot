@@ -1,4 +1,4 @@
-import { User, MapPin, Calendar, Settings, ChevronRight, CalendarSearch, CheckCircle2, History } from 'lucide-react'
+import { User, MapPin, Calendar, Settings, ChevronRight, History } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth.js'
 import { useAttendanceHistory } from '../hooks/useAttendance.js'
@@ -13,7 +13,6 @@ const menuItems = [
 export default function Profile() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
-  const isAdmin = user?.role === 'admin'
 
   const now = new Date()
   const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
@@ -64,36 +63,6 @@ export default function Profile() {
             <ChevronRight size={18} className="text-slate-300" />
           </PaperPiece>
         </button>
-
-        {isAdmin && (
-          <>
-            <button onClick={() => navigate('/admin/attendance')} className="w-full text-left active:scale-95 transition-transform">
-              <PaperPiece color="white" rotate="0.8deg" className="p-4 flex items-center justify-between shadow-sm border-b-2 border-slate-200/40">
-                <div className="flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-100">
-                    <CalendarSearch size={20} className="text-emerald-500" />
-                  </div>
-                  <span className="font-black text-slate-600 tracking-wide">月度出勤統計</span>
-                </div>
-                <ChevronRight size={18} className="text-slate-300" />
-              </PaperPiece>
-            </button>
-
-            <button onClick={() => navigate('/admin/corrections')} className="w-full text-left active:scale-95 transition-transform">
-              <PaperPiece color="white" rotate="-0.5deg" className="p-4 flex items-center justify-between shadow-sm border-b-2 border-slate-200/40">
-                <div className="flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-orange-50 border border-orange-100">
-                    <CheckCircle2 size={20} className="text-orange-500" />
-                  </div>
-                  <span className="font-black text-slate-600 tracking-wide">審核補打卡申請</span>
-                </div>
-                <ChevronRight size={18} className="text-slate-300" />
-              </PaperPiece>
-            </button>
-
-            <div className="h-4" />
-          </>
-        )}
 
         {menuItems.map((item) => {
           const Icon = item.icon

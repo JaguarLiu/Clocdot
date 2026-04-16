@@ -53,6 +53,18 @@ services:
       - server
     restart: unless-stopped
 
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    image: asia-east1-docker.pkg.dev/flashesim/checkpoint/admin:latest
+    container_name: checkpoint-admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    restart: unless-stopped
+
 volumes:
   postgres-dev:
   redis-dev:
