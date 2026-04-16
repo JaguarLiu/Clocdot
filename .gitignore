@@ -2,3 +2,8 @@ admin/node_modules/.bin/nanoid
 admin/dist/
 admin/node_modules/
 server/.env
+client/.env
+admin/.env
+node_modules/
+.yarnrc.yml
+.yarn/install-state.gz
