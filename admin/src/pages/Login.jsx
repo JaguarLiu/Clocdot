@@ -51,7 +51,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-slate-900">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-10">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-black text-slate-800">CheckPoint</h1>
+          <h1 className="text-2xl font-black text-slate-800">ClocDot</h1>
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Admin Console</p>
         </div>
 

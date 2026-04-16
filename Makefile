@@ -62,7 +62,7 @@ build-admin:
 
 # === Push to Artifact Registry ===
 
-REGISTRY := repo/project/checkpoint
+REGISTRY := repo/project/clocdot
 
 # Build (linux/amd64) + push client, server 和 admin
 push:
@@ -88,7 +88,7 @@ push-admin:
 
 # === Deploy to GCE ===
 
-GCE_INSTANCE := checkpoint
+GCE_INSTANCE := clocdot
 GCE_ZONE := asia-east1-c
 
 # 上傳 docker-compose.prod.yml 和 Caddyfile.prod 到 GCE

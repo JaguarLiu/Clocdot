@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:17
-    container_name: checkpoint-postgres
+    container_name: clocdot-postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: passwrd
@@ -16,7 +16,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: checkpoint-redis
+    container_name: clocdot-redis
     ports:
       - "6379:6379"
     volumes:
@@ -28,10 +28,10 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: asia-east1-docker.pkg.dev/flashesim/checkpoint/server:latest
-    container_name: checkpoint-server
+    image: asia-east1-docker.pkg.dev/flashesim/clocdot/server:latest
+    container_name: clocdot-server
     environment:
-      DATABASE_URL: postgresql://user:password@postgres:5432/checkpoint_db?schema=public
+      DATABASE_URL: postgresql://user:password@postgres:5432/clocdot_db?schema=public
       JWT_SECRET: dev-secret-change-in-production
       PORT: 3000
     ports:
@@ -45,8 +45,8 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: asia-east1-docker.pkg.dev/flashesim/checkpoint/client:latest
-    container_name: checkpoint-client
+    image: asia-east1-docker.pkg.dev/flashesim/clocdot/client:latest
+    container_name: clocdot-client
     ports:
       - "80:80"
     depends_on:
@@ -57,8 +57,8 @@ services:
     build:
       context: ./admin
       dockerfile: Dockerfile
-    image: asia-east1-docker.pkg.dev/flashesim/checkpoint/admin:latest
-    container_name: checkpoint-admin
+    image: asia-east1-docker.pkg.dev/flashesim/clocdot/admin:latest
+    container_name: clocdot-admin
     ports:
       - "8080:80"
     depends_on:

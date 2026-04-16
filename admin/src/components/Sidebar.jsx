@@ -22,7 +22,7 @@ export default function Sidebar() {
     <aside className="w-64 h-screen bg-slate-900 text-white flex flex-col shrink-0">
       {/* Logo */}
       <div className="px-6 py-6 border-b border-slate-700/50">
-        <h1 className="text-lg font-black tracking-tight">CheckPoint</h1>
+        <h1 className="text-lg font-black tracking-tight">ClocDot</h1>
         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Admin Console</p>
       </div>
 

@@ -14,7 +14,7 @@ export default function AppLayout() {
     '/correction': '補打卡申請',
     '/profile': '個人中心',
   }
-  const title = headerTitles[location.pathname] || 'CheckPoint'
+  const title = headerTitles[location.pathname] || 'ClocDot'
 
   return (
     <div className="min-h-screen bg-[#f3f0e6] flex justify-center items-start font-sans overflow-hidden text-slate-900">

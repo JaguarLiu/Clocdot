@@ -1,5 +1,5 @@
 {
-  "name": "@checkpoint/server",
+  "name": "@clocdot/server",
   "private": true,
   "version": "0.0.0",
   "type": "module",
